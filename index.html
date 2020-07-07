@@ -1,0 +1,54 @@
+<html>
+
+<head>
+  <title>Ejercicio</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css">
+  <link href="css/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+  <script type="text/javascript" src="js/vue.js"></script>
+  <script type="text/javascript" src="js/axios.min.js"></script>
+  <script type="text/javascript" src="js/vuetify.js"></script>
+</head>
+
+<body>
+  <div id="principal">
+    <v-app id="inspire">
+      <v-main>
+        <v-container class="fill-height" fluid>
+          <v-row align="center" justify="center">
+            <v-col cols="12" sm="8" md="4">
+              <v-card class="elevation-12">
+                <v-toolbar color="primary" dark flat>
+                  <v-toolbar-title>Cuento generado</v-toolbar-title>
+                  <v-spacer></v-spacer>
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                    </template>
+                    <span>Source</span>
+                  </v-tooltip>
+                </v-toolbar>
+                <v-card-text>
+                  <v-form>
+                    <v-text-field label="Personaje" prepend-icon="mdi-account" type="text" disabled="true" v-model="personaje"></v-text-field>
+                    <v-text-field label="Lugar" prepend-icon="mdi-fireplace" type="text" disabled="true" v-model="lugar"></v-text-field>
+                    <v-text-field label="Objeto" prepend-icon="mdi-ufo-outline" type="text" disabled="true" v-model="objeto"></v-text-field>
+                    <v-textarea label="Situación" prepend-icon="mdi-car" type="text" disabled="true" v-model="situacion"></v-textarea>
+                    <v-img src="https://picsum.photos/350/165?random" class="grey darken-4"></v-img>
+                  </v-form>
+                </v-card-text>
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <v-btn color="primary" @click="reloadData">Refrescar</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-col>
+          </v-row>
+        </v-container>
+      </v-main>
+    </v-app>
+  </div>
+  <script type="text/javascript" src="src/main.js"></script>
+</body>
+
+</html>
